@@ -2,6 +2,7 @@ import pyaudio
 import wave
 import requests
 import os
+import numpy as np
 
 # Your OpenAI API key
 api_key = os.environ["OPENAI_API_KEY"]
@@ -14,7 +15,8 @@ FORMAT = pyaudio.paInt16  # Audio format (16-bit resolution)
 CHANNELS = 1  # Mono audio
 RATE = 44100  # Sample rate (samples per second)
 CHUNK = 1024  # Size of each audio chunk (buffer size)
-TIME_LIMIT = 10  # Time limit for the recording in seconds
+SILENCE_THRESHOLD = 1000  # Threshold below which audio is considered silent
+SILENCE_LIMIT = 2  # Number of consecutive silent chunks before stopping
 OUTPUT_FILENAME = "recorded_audio.wav"  # Output file name
 
 def record_and_transcribe():
@@ -34,14 +36,30 @@ def record_and_transcribe():
                     frames_per_buffer=CHUNK)
 
     frames = []
+    silent_chunks = 0
 
-    # Record audio for the specified time limit
-    for _ in range(0, int(RATE / CHUNK * TIME_LIMIT)):
+    while True:
+        # Read a chunk of data from the microphone
         data = stream.read(CHUNK)
         frames.append(data)
 
+        # Convert the data to numpy array for analysis
+        audio_data = np.frombuffer(data, dtype=np.int16)
+
+        # Calculate the RMS (Root Mean Square) of the audio data to detect volume
+        rms = np.sqrt(np.mean(audio_data**2))
+
+        if rms < SILENCE_THRESHOLD:
+            silent_chunks += 1
+        else:
+            silent_chunks = 0
+
+        # Stop recording if silence has lasted for the specified limit
+        if silent_chunks >= SILENCE_LIMIT:
+            print("Silence detected, stopping recording...")
+            break
+
     # Stop recording
-    print("Recording finished.")
     stream.stop_stream()
     stream.close()
     p.terminate()
