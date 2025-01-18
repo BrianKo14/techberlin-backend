@@ -78,6 +78,15 @@ def get_matches():
 	""" Returns an object with the user's matches. """
 	return matches.get_matches()
 
+@app.route('matches/ask-question', methods=['POST'])
+def ask_question():
+	""" Receives a question and returns the answer. """
+	dialogue_history = request.form['dialogue_history']
+	question = request.form['question']
+	user_id = request.form['user_id']
+
+	return matches.ask_question(dialogue_history, question, user_id)
+
 
 
 # ------------------------------------------------

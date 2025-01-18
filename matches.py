@@ -1,5 +1,5 @@
 
-from agents import dialogue_generation
+from agents import dialogue_generation, question_answering
 import json
 
 USERS_REF_PATH = "./data/users-reference.json"
@@ -19,3 +19,11 @@ def get_matches():
 			user["evaluation"] = evaluation
 
 	return users["users"]
+
+
+def ask_question(dialogue_history, question, user_id):
+	""" Receives a question and returns the answer. """
+
+	answer = question_answering.ask(dialogue_history, question, user_id)
+
+	return { 'answer': answer }
