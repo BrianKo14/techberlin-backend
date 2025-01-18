@@ -3,7 +3,7 @@ import wave
 import requests
 
 # Your OpenAI API key
-API_KEY = "your-openai-api-key"
+api_key = os.environ["OPENAI_API_KEY"]
 
 # API endpoint for Whisper transcription
 url = "https://api.openai.com/v1/audio/transcriptions"
@@ -16,7 +16,7 @@ CHUNK = 1024  # Size of each audio chunk (buffer size)
 TIME_LIMIT = 10  # Time limit for the recording in seconds
 OUTPUT_FILENAME = "recorded_audio.wav"  # Output file name
 
-def record_and_transcribe(key=API_KEY):
+def record_and_transcribe():
     """
     Records audio from the microphone, saves it as a .wav file,
     and sends it to the OpenAI Whisper API for transcription.
@@ -56,7 +56,7 @@ def record_and_transcribe(key=API_KEY):
 
     # Prepare the headers with the API key
     headers = {
-        "Authorization": f"Bearer {key}"
+        "Authorization": f"Bearer {api_key}"
     }
 
     # Prepare the file for upload and specify the model

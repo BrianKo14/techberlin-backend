@@ -1,7 +1,52 @@
-import stt, tts
 
-def start(name="Max"):
-    promt = f"Hello, {name}. I need some information about yourself to find your perfect match. So let's get started. How old are you?"
-    tts.synthesize_speech(promt)
-    stt.record_and_transcribe("openAI-Key")
+import sys
+sys.path.append('..')
+
+from interview import interview_generation
+from nlp import stt, tts
+
+
+FIRST_QUESTION = "Hi there! I’m here to help set up your dating profile. Can I ask you a few questions?"
+
+
+def start_interview():
+
+    context_dialogue = {
+        "dialogue": [{
+                "speaker": "AI",
+                "text": FIRST_QUESTION
+            }]
+    }
+
+    context_dialogue = get_user_reply(context_dialogue)
+
+    for _ in range(5):
+        context_dialogue = continue_interview(context_dialogue)
+        
+
+def continue_interview(context_dialogue):
+
+    # Generate the next question
+    next_question = interview_generation.get_next_question(context_dialogue)
+    context_dialogue["dialogue"].append({
+        "speaker": "AI",
+        "text": next_question
+    })
+
+    # Get reply
+    user_reply = get_user_reply(next_question)
+    context_dialogue["dialogue"].append({
+        "speaker": "User",
+        "text": user_reply
+    })
+
+    return context_dialogue
+
+
+def get_user_reply(next_question):
+
+    tts.synthesize_speech_and_play(next_question)
+    return stt.record_and_transcribe()
+
+    
     
