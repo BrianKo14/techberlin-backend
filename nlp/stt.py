@@ -14,7 +14,7 @@ FORMAT = pyaudio.paInt16  # Audio format (16-bit resolution)
 CHANNELS = 1  # Mono audio
 RATE = 44100  # Sample rate (samples per second)
 CHUNK = 1024  # Size of each audio chunk (buffer size)
-TIME_LIMIT = 10  # Time limit for the recording in seconds
+TIME_LIMIT = 5  # Time limit for the recording in seconds
 OUTPUT_FILENAME = "recorded_audio.wav"  # Output file name
 
 def record_and_transcribe():

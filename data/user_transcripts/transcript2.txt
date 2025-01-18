@@ -1,0 +1,33 @@
+AI: Hi James, it’s me again, from the dating service. I wanted to follow up on a few things. Is now a good time?
+
+Human: Oh, uh, yeah, sure. Go ahead.
+
+AI: Awesome. So, I was reviewing your profile, and there were a couple of things I wanted to clarify or expand on. Is that okay?
+
+Human: Yeah, no problem. What do you need?
+
+AI: Great! Let’s start with your interests. You mentioned hiking—do you prefer short trails, or are you into, uh... [static] ...long treks?
+
+Human: Oh, long treks for sure. I really like those weekend backpacking trips, you know, just being out in nature for a few days.
+
+AI: Backpacking trips... noted. And, about your music hobby—you said you play guitar. Do you play for fun, or, uh... in a band or something?
+
+Human: Oh, just for fun. I mean, I’ve jammed with friends here and there, but nothing serious. I like playing acoustic, mostly.
+
+AI: Got it. Acoustic guitar. Sounds relaxing. Okay, next question—uh, when it comes to relationships, what’s something important to you? Like, uh, values or... traits you’d look for in someone?
+
+Human: Hmm. I guess... honesty is a big one. And, uh, someone who doesn’t take life too seriously, you know? Like, someone fun but also grounded.
+
+AI: Honest... fun but grounded. Makes sense. Okay, one more thing—your ideal first date. What would that look like?
+
+Human: Oh, um, probably something simple. Maybe coffee, or a walk in the park? Something chill, where we can just talk and get to know each other.
+
+AI: Coffee or a park walk. Got it! Uh, thanks for clearing that up, James. Anything you’d like to add or change about your profile?
+
+Human: Nope, I think that’s it. Thanks for checking in.
+
+AI: Alright, James. We’ll update your profile. Have a great day!
+
+Human: You too. Bye!
+
+[Call disconnects]
