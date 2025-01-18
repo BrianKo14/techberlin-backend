@@ -23,10 +23,6 @@ def synthesize_speech(text, output_filename='output.wav', lmnt_key=LMNT_API_KEY)
             # Save the audio data to a file
             with open(output_filename, 'wb') as f:
                 f.write(synthesis['audio'])
-            
-            # List available voices (optional)
-            voices = await Speech(LMNT_API_KEY).list_voices()
-            print(voices)
 
     # Run the asynchronous main function
     asyncio.run(main())

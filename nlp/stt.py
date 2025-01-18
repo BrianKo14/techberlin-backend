@@ -1,6 +1,7 @@
 import pyaudio
 import wave
 import requests
+import os
 
 # Your OpenAI API key
 api_key = os.environ["OPENAI_API_KEY"]

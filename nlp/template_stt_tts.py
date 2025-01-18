@@ -18,9 +18,13 @@ def start_interview():
             }]
     }
 
-    context_dialogue = get_user_reply(context_dialogue)
+    user_reply = get_user_reply(FIRST_QUESTION)
+    context_dialogue["dialogue"].append({
+        "speaker": "User",
+        "text": user_reply
+    })
 
-    for _ in range(5):
+    for _ in range(2):
         context_dialogue = continue_interview(context_dialogue)
         
 
@@ -32,6 +36,8 @@ def continue_interview(context_dialogue):
         "speaker": "AI",
         "text": next_question
     })
+
+    print(f"Next question: {next_question}")
 
     # Get reply
     user_reply = get_user_reply(next_question)
@@ -47,6 +53,22 @@ def get_user_reply(next_question):
 
     tts.synthesize_speech_and_play(next_question)
     return stt.record_and_transcribe()
+
+
+# start_interview()
+
+context_dialogue = {
+        "dialogue": [{
+                "speaker": "AI",
+                "text": FIRST_QUESTION
+            },
+            {
+                "speaker": "User",
+                "text": "Yes, sure."
+            }]
+    }
+
+continue_interview(context_dialogue)
 
     
     

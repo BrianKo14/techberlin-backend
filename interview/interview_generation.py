@@ -37,7 +37,7 @@ def get_next_question(context_dialogue):
 	
 	On top of that, generate random questions that are fun and engaging.
 
-	Reply with a new question that hasn't been asked yet. That is, the next element in the array.
+	Reply with a new question that hasn't been asked yet. That is, the next element in the array, not the entire dialogue.
 	"""
 
 	response = mistral_service.ask_mistral(
