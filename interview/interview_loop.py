@@ -12,16 +12,47 @@ FIRST_QUESTION = "Hi there! I’m here to help set up your dating profile. Can I
 TRANSCRIPTS_PATH = "../data/user_transcripts/"
 NUMBER_OF_QUESTIONS = 5
 
+INITIAL_CONTEXT = {
+    "dialogue": [{
+        "speaker": "AI",
+        "text": FIRST_QUESTION
+    }]
+}
+
 
 def start_interview():
 
-    context_dialogue = {
-        "dialogue": [{
-                "speaker": "AI",
-                "text": FIRST_QUESTION
-            }]
-    }
+    tts.synthesize_speech(FIRST_QUESTION)
+    return 'nlp/output.wav', INITIAL_CONTEXT
 
+
+def continue_interview(context_dialogue, reply_audio_path):
+
+    # Get reply
+    user_reply = stt.transcribe_audio(reply_audio_path)
+    context_dialogue["dialogue"].append({
+        "speaker": "User",
+        "text": user_reply
+    })
+
+    # Generate the next question
+    next_question = interview_generation.get_next_question(context_dialogue)
+    context_dialogue["dialogue"].append({
+        "speaker": "AI",
+        "text": next_question
+    })
+
+    print(f"Next question: {next_question}")
+
+    tts.synthesize_speech(next_question)
+
+    return 'nlp/output.wav', context_dialogue
+
+
+def start_interview_local():
+
+    context_dialogue = INITIAL_CONTEXT
+    
     user_reply = get_user_reply(FIRST_QUESTION)
     context_dialogue["dialogue"].append({
         "speaker": "User",
@@ -29,12 +60,12 @@ def start_interview():
     })
 
     for _ in range(NUMBER_OF_QUESTIONS):
-        context_dialogue = continue_interview(context_dialogue)
+        context_dialogue = continue_interview_local(context_dialogue)
 
     save_transcript(context_dialogue)
 
 
-def continue_interview(context_dialogue):
+def continue_interview_local(context_dialogue):
 
     # Generate the next question
     next_question = interview_generation.get_next_question(context_dialogue)
