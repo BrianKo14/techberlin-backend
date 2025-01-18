@@ -1,4 +1,7 @@
 
+import sys
+sys.path.append('..')
+
 import mistral_service
 import json
 
