@@ -15,8 +15,8 @@ FORMAT = pyaudio.paInt16  # Audio format (16-bit resolution)
 CHANNELS = 1  # Mono audio
 RATE = 44100  # Sample rate (samples per second)
 CHUNK = 1024  # Size of each audio chunk (buffer size)
-SILENCE_THRESHOLD = 1000  # Threshold below which audio is considered silent
-SILENCE_LIMIT = 2  # Number of consecutive silent chunks before stopping
+SILENCE_THRESHOLD = 500  # Threshold below which audio is considered silent
+SILENCE_LIMIT = 3  # Number of consecutive silent chunks before stopping
 OUTPUT_FILENAME = "recorded_audio.wav"  # Output file name
 
 def record_and_transcribe():
