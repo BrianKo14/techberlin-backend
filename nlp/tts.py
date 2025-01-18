@@ -31,3 +31,36 @@ def synthesize_speech(text, output_filename='output.wav', lmnt_key=LMNT_API_KEY)
     # Run the asynchronous main function
     asyncio.run(main())
 
+import pyaudio
+import wave
+
+def play_audio(filename):
+    """
+    Plays the audio from the given .wav file.
+    """
+    # Open the audio file
+    wf = wave.open(filename, 'rb')
+
+    # Initialize pyaudio
+    p = pyaudio.PyAudio()
+
+    # Open a stream for audio playback
+    stream = p.open(format=pyaudio.paInt16,
+                    channels=wf.getnchannels(),
+                    rate=wf.getframerate(),
+                    output=True)
+
+    # Read and play the audio in chunks
+    data = wf.readframes(1024)  # CHUNK size of 1024
+    while data:
+        stream.write(data)
+        data = wf.readframes(1024)
+
+    # Stop and close the stream
+    stream.stop_stream()
+    stream.close()
+    p.terminate()
+
+def synthesize_speech_and_play(promt):
+    synthesize_speech(promt)
+    play_audio("output.wav")
