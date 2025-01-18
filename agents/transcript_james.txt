@@ -1,0 +1,33 @@
+AI: Hi! I’m calling to help set up your profile for the dating service. Can I ask you a few questions?
+
+Human: Sure, go ahead.
+
+AI: Great! Let’s start simple. What’s your name?
+
+Human: My name’s James. Uh, James Carter.
+
+AI: Got it. James... Carter. And, uh, what’s your age?
+
+Human: I’m twenty-... [static] -wo. Twenty-two.
+
+AI: Twenty-two. Perfect. Next, which languages do you speak?
+
+Human: I speak English, uh, a bit of Spanish—oh, and some... French too, but just a little.
+
+AI: English... Spanish... and some French. Okay. Uh, tell me about your hobbies, or interests?
+
+Human: Um, well, I like music a lot—guitar, actually—and hiking, uh, exploring new trails. And movies, yeah, especially, um... oh! Sci-fi movies.
+
+AI: Guitar... hiking... sci-fi. Cool! Uh, what’s your personality like? Or, how would friends... describe you?
+
+Human: Uh, they’d probably say I’m chill... kinda introverted, but I open up once you, uh, get to know me. And—oh—funny! People say I make, uh... good jokes sometimes.
+
+AI: Chill... funny... intro... introverted. Got it. Lastly, what’s your... uh, relationship with your best friend like?
+
+Human: My best friend? Uh, we’re super close—we talk almost every day. They... [garbled audio] ...me honest and, uh, we have the same sense of humor.
+
+AI: Sounds like a strong bond. Thanks, James! I think we have what we need. Anything else to add?
+
+Human: Nope, that’s all. Thanks for calling!
+
+AI: Thanks, James. Have a great day! [call disconnects]
