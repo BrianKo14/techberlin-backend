@@ -7,6 +7,9 @@ import json
 
 app = Flask(__name__)
 
+turn_counter = 0
+MAX_TURNS = 5
+
 
 # ----------------- API ENDPOINTS -----------------
 
@@ -44,7 +47,14 @@ def next_question():
 	# Get dialogue history
 	context_dialogue = request.form['metadata']
 	context_dialogue = json.loads(context_dialogue)	
+
+	turn_counter += 1
+	if turn_counter >= MAX_TURNS:
+		# End the interview
+		interview_loop.save_transcript(context_dialogue)
+		return Response(json.dumps({'done': 'Max turns reached.'}), status=201)
 	
+	# Continue the interview
 	next_question_path, context_dialogue = interview_loop.continue_interview(context_dialogue, save_path)
 
 	# Get new audio data
