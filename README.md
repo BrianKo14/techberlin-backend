@@ -50,3 +50,5 @@
 
 We have built a working prototype that showcases the core pipeline of our concept. We invite you to check the code, it is well-documented and provides further insights into how our work during the hackathon maps to the proposed concept and future development.
 
+> 📲 See also the front-end repo: https://github.com/BrianKo14/techberlin-frontend
+
