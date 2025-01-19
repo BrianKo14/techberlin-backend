@@ -23,22 +23,22 @@
    - Delegate agents mimick personality traits, conversation style, user's knowledge, etc.
    - It even suggests a first-date proposal.
 
-5. The user-facing app presents these conversations to the user through the industry-established **swiping interface**. The user can further ask questions to the agents. And decides whether to **approve of the match** or not. If they both approve, they get connected.
+4. The user-facing app presents these conversations to the user through the industry-established **swiping interface**. The user can further ask questions to the agents. And decides whether to **approve of the match** or not. If they both approve, they get connected.
 
 ### *General facts*
 
-6. Our pipeline eventually requires the entire {Tech: Berlin} toolchain:
+5. Our pipeline eventually requires the entire {Tech: Berlin} toolchain:
    - **Mistral** for the LLMs.
    - **LMNT** for TTS.
    - **Haystack** for searching through generated agent profiles and conversation transcripts.
    - **Weaviate** for storing and digesting the user’s semantic information.
    
    
-7. We leverage AI agents to stand at **the forefront of the inevitable future of people-connecting software**. 
+6. We leverage AI agents to stand at **the forefront of the inevitable future of people-connecting software**. 
 
-8. It is mainly an **AI-voice application**, since the Wingman is a voice-enabled interface: you talk to your Wingman; your Wingman is your digital pal that's helping you out. That is our brand.
+7. It is mainly an **AI-voice application**, since the Wingman is a voice-enabled interface: you talk to your Wingman; your Wingman is your digital pal that's helping you out. That is our brand.
 
-9. We guarantee privacy through **end-to-end data confidentiality**.
+8. We guarantee privacy through **end-to-end data confidentiality**.
 
 <br />
 
