@@ -15,15 +15,15 @@
 	<img src="https://img.notionusercontent.com/s3/prod-files-secure%2F2a0adaa5-e8b5-4687-8a65-6e280851b1af%2F8c1254d8-f7c9-4549-ab62-63cf808a27ca%2FBildschirmfoto_2025-01-19_um_08.47.29.png/size/w=580?exp=1737284006&sig=VjxQjU_95B18CkeAyvKHH-RaerxrGLnKyEXUqMzYr28" width="200">
 </p>
 
-### *“Delegate dating agents” / ”Digital twins”*
-
 2. **“Curated selection”: Your Wingman learns about you, and uses this data to select the right matches.**
+
+### *“Delegate dating agents” / ”Digital twins”*
 	
 3. **This data is also used to generate “delegate dating agents”** that talk to each other to generate “simulated conversations between potential matches.” The Wingman evaluates these conversations to reach a “conclusion and summary” and “makes a recommendation.”
    - Delegate agents mimick personality traits, conversation style, user's knowledge, etc.
    - It even suggests a first-date proposal.
 
-5. The user-facing app presents these conversations to the user through the industry-established **swiping interface**. The user can further ask questions to the agents. And decides whether to **approve of the match** or not. If they both approve, they are connected.
+5. The user-facing app presents these conversations to the user through the industry-established **swiping interface**. The user can further ask questions to the agents. And decides whether to **approve of the match** or not. If they both approve, they get connected.
 
 ### *General facts*
 
