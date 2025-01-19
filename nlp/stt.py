@@ -84,6 +84,43 @@ def record_and_transcribe():
         print(f"Error: {response.status_code}")
         print(response.text)
         return None
+    
+
+def transcribe_audio(input_audio):
+    """
+    Records audio from the microphone, saves it as a .wav file,
+    and sends it to the OpenAI Whisper API for transcription.
+    """
+
+    # Prepare the headers with the API key
+    headers = {
+        "Authorization": f"Bearer {api_key}"
+    }
+
+    # Prepare the file for upload and specify the model
+    files = {
+        "file": open(input_audio, "rb"),
+    }
+
+    # Adding the model parameter explicitly
+    data = {
+        "model": "whisper-1"  # Specify the Whisper model
+    }
+
+    # Make the POST request to the Whisper API
+    print("Transcribing audio...")
+    response = requests.post(url, headers=headers, files=files, data=data)
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Print the transcription result
+        transcription = response.json()
+        print("Transcription result:", transcription["text"])
+        return transcription["text"]
+    else:
+        print(f"Error: {response.status_code}")
+        print(response.text)
+        return None
 
 # Example of calling the function
 if __name__ == "__main__":

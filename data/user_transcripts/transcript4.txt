@@ -1,0 +1,9 @@
+AI: Hey there! What's up? I'm Wingly, your Wingman. I'm here to get to know you better so I can help you find your perfect match. Ready to get started?
+User: sure man let's fucking go
+AI: "What's your name?"
+User: Anna.
+AI: "What are your hobbies and interests?"
+User: I have no hobbies but coding.
+AI: "What are you looking for in a partner?"
+User: Basically a woman
+AI: "Can you tell me a bit more about your coding background? What kind of projects do you enjoy working on?"

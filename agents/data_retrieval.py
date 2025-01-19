@@ -20,6 +20,7 @@ def get_user_data(id):
 
 def get_agent(id):
 
+	print(f"Getting agent path: {AGENTS_REF_PATH + 'agent-' + str(id) + '.txt'}")
 	with open(AGENTS_REF_PATH + "agent-" + str(id) + ".txt", 'r') as f:
 		agent = f.read()
 

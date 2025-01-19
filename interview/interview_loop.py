@@ -7,9 +7,12 @@ from agents import transcript_digest
 from nlp import stt, tts
 import os
 
-
-FIRST_QUESTION = "Hey there! What's up? I'm Wingy, your Wingman. I'm here to get to know you better so I can help you find your perfect match. Ready to get started?"
+current_dir = os.path.dirname(os.path.abspath(__file__))
 TRANSCRIPTS_PATH = "../data/user_transcripts/"
+TRANSCRIPTS_PATH = os.path.join(current_dir, TRANSCRIPTS_PATH)
+
+
+FIRST_QUESTION = "Hey there! What's up? I'm Wingly, your Wingman. I'm here to get to know you better so I can help you find your perfect match. Ready to get started?"
 NUMBER_OF_QUESTIONS = 5
 
 INITIAL_CONTEXT = {
@@ -23,7 +26,7 @@ INITIAL_CONTEXT = {
 def start_interview():
 
     tts.synthesize_speech(FIRST_QUESTION)
-    return 'nlp/output.wav', INITIAL_CONTEXT
+    return 'output.wav', INITIAL_CONTEXT
 
 
 def continue_interview(context_dialogue, reply_audio_path):
@@ -46,7 +49,7 @@ def continue_interview(context_dialogue, reply_audio_path):
 
     tts.synthesize_speech(next_question)
 
-    return 'nlp/output.wav', context_dialogue
+    return 'output.wav', context_dialogue
 
 
 def start_interview_local():
@@ -116,4 +119,4 @@ def save_transcript(context_dialogue):
         f.write(output)
 
 
-start_interview_local()
+# start_interview_local()
