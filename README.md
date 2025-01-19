@@ -1,5 +1,5 @@
 
-# Wingent Is Your Wingman: The Dating App That Really Knows You
+# Wingly Is Your Wingman: The Dating App That Really Knows You
 
 ## 💡 Our Concept In 8 Points
 
