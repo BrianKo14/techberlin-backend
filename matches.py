@@ -7,6 +7,9 @@ USERS_REF_PATH = "./data/users-reference.json"
 def get_matches():
 	""" Returns an object with the user's matches. """
 
+	# NOTE: Currently, our system executes agent interactions on request.
+	# In a real-world scenario, this would be done asynchronously and be optimized for performance.
+
 	with open(USERS_REF_PATH, 'r') as f:
 		users = json.load(f)
 

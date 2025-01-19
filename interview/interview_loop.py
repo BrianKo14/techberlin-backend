@@ -1,4 +1,7 @@
 
+# NOTE: This module implements the workflow for the Wingman call process.
+# It provides the backend endpoints for receiving, processing and replying to user voice input.
+
 import sys
 sys.path.append('..')
 
@@ -31,6 +34,8 @@ def start_interview():
 
 def continue_interview(context_dialogue, reply_audio_path):
 
+    # NOTE: Eventually, we would need to design a working dialogue tree to ensure accurate conversation flow.
+
     # Get reply
     user_reply = stt.transcribe_audio(reply_audio_path)
     context_dialogue["dialogue"].append({
@@ -52,6 +57,7 @@ def continue_interview(context_dialogue, reply_audio_path):
     return 'output.wav', context_dialogue
 
 
+# DEBUG: This runs the interview locally for debugging purposes
 def start_interview_local():
 
     context_dialogue = INITIAL_CONTEXT
@@ -68,6 +74,7 @@ def start_interview_local():
     save_transcript(context_dialogue)
 
 
+# DEBUG: This runs the interview locally for debugging purposes
 def continue_interview_local(context_dialogue):
 
     # Generate the next question
@@ -117,6 +124,3 @@ def save_transcript(context_dialogue):
     unique_filename = get_unique_filename(TRANSCRIPTS_PATH, "transcript", ".txt")
     with open(unique_filename, "w") as f:
         f.write(output)
-
-
-# start_interview_local()

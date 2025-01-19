@@ -1,8 +1,13 @@
+
+# NOTE: The question-answering module is designed to search into agent profiles to provide further information about your potential match.
+
 import sys
 sys.path.append('..')
 
 import mistral_service
 from agents import data_retrieval
+
+
 
 def ask(dialogue, question, user_id):
 

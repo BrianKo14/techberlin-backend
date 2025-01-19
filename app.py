@@ -1,9 +1,9 @@
 from flask import Flask, request, send_file, Response
+from flask_cors import CORS
+import json
 
 from interview import interview_loop 
 import matches
-import json
-from flask_cors import CORS
 
 
 app = Flask(__name__)

@@ -8,6 +8,10 @@ from agents import data_retrieval
 
 def generate_dialogue(user1_id, user2_id):
 
+	# NOTE: Prompting is crucial to obtain quality results from generative models.
+	# Later research would have to delve into best practices.
+	# We would need to design a more sophisticated prompting pipeline to guarantee variety and originality.
+
 	user1 = data_retrieval.get_user_data(user1_id)
 	user2 = data_retrieval.get_user_data(user2_id)
 
@@ -36,6 +40,10 @@ def generate_dialogue(user1_id, user2_id):
 
 def evaluate_dialogue(dialogue):
 
+	# NOTE: It's hard to generate unbiased scoring methods from generative NL models.
+	# In later versions, we would have to design a statistical model to evaluate across the user space.
+	# For now, we will use simple heuristics to evaluate the dialogue.
+
 	prompt = f"""
 	Here is a dialogue between two people who have just met:
 
@@ -50,6 +58,7 @@ def evaluate_dialogue(dialogue):
 	- "Summary": <two-line summary of the evaluation>
 	- "If these people were to have a first date, where or what should they do?": <one-line suggestion>
 	"""
+
 
 	return mistral_service.ask_mistral(
 		prompt,

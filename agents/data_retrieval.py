@@ -1,4 +1,10 @@
 
+# NOTE: Here we provide a draft for the data retrieval module.
+# In a real-world scenario, having a large user-base would require a more sophisticated database
+# for dealing with semantic information. Weaviate and Haystack are necessary frameworks for building this infrastructure.
+# Agents will become multi-dimensional beyond single-file personality guidelines, and the matchmaker algorithm
+# needs to be able to efficiently digest and retrieve this knowledge.
+
 import json, os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))

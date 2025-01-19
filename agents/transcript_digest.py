@@ -1,4 +1,7 @@
 
+# NOTE: The transcript digesting module is designed to distill information through real-time semantic analysis.
+# It takes conversation transcript from the user-facing app and extracts information to further refine the user-agent profiles.
+
 import sys
 sys.path.append('..')
 
