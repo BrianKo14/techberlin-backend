@@ -30,15 +30,13 @@ def format_transcript(transcript):
 	- Name of the user.
 	- Age of the user.
 	- Which languages they speak.
-	- A brief summary of their hobbies.
 
 	Return the information in JSON format. Reply with the JSON object. That is, your response should being with a '{' and end with a '}'.
 	
 	Format fields template: 
-		"Name": ?,
-		"Age": ?,
-		"Languages": [?, ?, ...]
-		"Hobbies": <brief summary>
+		"name": ?,
+		"age": ?,
+		"languages": [?, ?, ...]
 	"""
 
 	response = mistral_service.ask_mistral(

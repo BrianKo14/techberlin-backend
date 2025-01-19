@@ -8,7 +8,7 @@ from nlp import stt, tts
 import os
 
 
-FIRST_QUESTION = "Hi there! I’m here to help set up your dating profile. Can I ask you a few questions?"
+FIRST_QUESTION = "Hey there! What's up? I'm Wingy, your Wingman. I'm here to get to know you better so I can help you find your perfect match. Ready to get started?"
 TRANSCRIPTS_PATH = "../data/user_transcripts/"
 NUMBER_OF_QUESTIONS = 5
 
@@ -114,3 +114,6 @@ def save_transcript(context_dialogue):
     unique_filename = get_unique_filename(TRANSCRIPTS_PATH, "transcript", ".txt")
     with open(unique_filename, "w") as f:
         f.write(output)
+
+
+start_interview_local()

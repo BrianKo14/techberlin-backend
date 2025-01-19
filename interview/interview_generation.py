@@ -3,18 +3,6 @@ import sys
 sys.path.append('..')
 
 import mistral_service
-import json
-
-
-dialogue_starter = str({
-	"dialogue": [
-		{
-			"speaker": "AI",
-			"text": "Hi there! I’m here to help set up your dating profile. Can I ask you a few questions?"
-		}
-	]
-})
-
 
 
 def get_next_question(context_dialogue):
@@ -35,15 +23,13 @@ def get_next_question(context_dialogue):
 	- Describe yourself
 	- What are you looking for in a partner?
 	
-	On top of that, generate random questions that are fun and engaging.
-
 	Reply with a new question that hasn't been asked yet.
 	"""
 
 	response = mistral_service.ask_mistral(
 		prompt,
 		response_format = { "type": "json_object" },
-		model = "ministral-3b-latest"
+		model = "ministral-3b-latest" # NOTE: We use a smaller model for real-time performance
 	)
 
 	return response

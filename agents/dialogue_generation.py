@@ -25,7 +25,9 @@ def generate_dialogue(user1_id, user2_id):
 	Generate a message history between the two people. The dialogue should be a friendly conversation between two people who have just met.
 	Don't copy from their profiles, but invent an original conversation that reflects their profiles but does not showcase them directly.
 
-	Max. length: 10 turns.
+	Length per message: 1 or 2 sentences.
+	Max. length: 5 turns.
+
 	"""
 
 	return mistral_service.ask_mistral(prompt)
@@ -46,7 +48,7 @@ def evaluate_dialogue(dialogue):
 	- "Similarity": <very different, different, neutral, similar, very similar>
 	- "Compatibility": <completely uncompatible, uncompatible, neutral, compatible, very compatible>
 	- "Summary": <two-line summary of the evaluation>
-	- "If these people were to have a first date, where or what should they do?": <suggestion>
+	- "If these people were to have a first date, where or what should they do?": <one-line suggestion>
 	"""
 
 	return mistral_service.ask_mistral(
